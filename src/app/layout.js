@@ -1,7 +1,7 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Last from "@/components/Last";
+import Footer from "@/components/Footer";
 import localfont from "next/font/local";
 import AuthProvider from "@/providers/AuthProvider";
 import { Raleway } from "next/font/google";
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
             {children}
           </AuthProvider>
         </main>
-        <Last />
+        <Footer />
       </body>
     </html>
   );
