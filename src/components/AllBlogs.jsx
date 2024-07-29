@@ -19,6 +19,7 @@ const getData = async (cat, email) => {
 };
 
 
+//
 
 const AllBlogs = async ({ cat, email }) => {
 
