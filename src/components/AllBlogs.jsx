@@ -7,7 +7,7 @@ const getData = async (cat, email) => {
   const res = await fetch(
     `http://localhost:3000/api/posts?cat=${cat || ""}&email=${email || ""}`,
     {
-      cache: "no-store",
+
     }
   );
 
@@ -26,6 +26,7 @@ const AllBlogs = async ({ cat, email }) => {
   let data;
   try {
     data = await getData(cat, email);
+    console.log(data)
   } catch (error) {
     console.error("Error fetching data:", error);
     data = { content: "<p>Failed to load content</p>" };
@@ -36,7 +37,7 @@ const AllBlogs = async ({ cat, email }) => {
     <div className='flex flex-col bg-yellow p-auto '>
       <h2 className='font-medium text-2xl md:text-4xl border-b-2 border-black mb-6'>LATEST BLOGS</h2>
       <div className='flex flex-wrap gap-7  '>
-        {data.slice().reverse().map((item) => (
+        {data.reverse().map((item) => (
           <Link key={item.id} href={`/view/${item.slug}`} className='w-[100%] sm:w-auto sm:h-[270px]'>
             <div className=' rounded-[5px] h-[110px] w-[100%] sm:w-[240px] sm:h-[100%] overflow-hidden flex gap-2 sm:flex-col z-[5] ' key={item.id}>
 
