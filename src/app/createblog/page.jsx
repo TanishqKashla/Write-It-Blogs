@@ -8,7 +8,7 @@ import "react-quill/dist/quill.bubble.css";
 import { useSession } from 'next-auth/react';
 import { CldUploadWidget } from 'next-cloudinary';
 
-const createblog = () => {
+const Createblog = () => {
 
     const { status } = useSession();
     const router = useRouter();
@@ -106,7 +106,7 @@ const createblog = () => {
                     )}
 
                 </div>
-                
+
                 <label htmlFor="content" className='text-2xl font-bold mt-5'>Write</label>
                 <ReactQuill
                     theme="bubble"
@@ -135,4 +135,4 @@ const createblog = () => {
     )
 }
 
-export default createblog
+export default Createblog
