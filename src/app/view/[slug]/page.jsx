@@ -24,13 +24,14 @@ const SinglePage = async ({ params }) => {
 
     const session = await getServerSession(authOptions)
 
-
-
-    console.log(params)
     const { slug } = params;
-    console.log(slug);
-
-    const data = await getData(slug);
+    let data;
+    try {
+        data = await getData(slug);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        data = { content: "<p>Failed to load content</p>" };
+    }
 
     return (
         <div className="flex flex-col sm:px-[10%] lg:px-[13%] xl:px-[16%] mt-20 md:mt-10">
@@ -42,7 +43,7 @@ const SinglePage = async ({ params }) => {
 
                 {data?.img && (
                     <div className="relative w-[100%] aspect-[4/3] lg:h-[330px] lg:w-[360px] rounded-md overflow-hidden">
-                        <Image src={data.img} fill style={{ objectFit: "cover", height: "100%", width: "100%" }} />
+                        <Image src={data.img} alt={data?.title} height={500} width={500} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
                     </div>
                 )}
 
@@ -52,10 +53,11 @@ const SinglePage = async ({ params }) => {
                 <div className="h-[40px] sm:h-[65px] aspect-square">
                     {data?.user?.image && (
                         <div className="rounded-full overflow-hidden">
-                            <Image height={100} width={100} quality={100} style={{ objectFit: "cover", height: "100%", width: "100%" }} src={data.user.image} alt="" />
+                            <Image height={100} width={100} quality={100} style={{ objectFit: "cover", height: "100%", width: "100%" }} src={data.user.image} alt="user pfp" />
                         </div>
                     )}
                 </div>
+
                 <div >
                     <span className="font-bold ">
                         {data?.user.name}
@@ -83,7 +85,6 @@ const SinglePage = async ({ params }) => {
                             </span>
                         )}
 
-
                         <div className="sm:mt-2 text-sm flex items-center gap-2">
                             <IoMdEye size={15} color="#b1b1b1" /> {data.views}
                         </div>
@@ -110,8 +111,6 @@ const SinglePage = async ({ params }) => {
                         <RemoveBtn id={data.id} />
                     </div>
                 }
-
-
 
             </div>
         </div >

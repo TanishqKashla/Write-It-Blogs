@@ -7,6 +7,9 @@ export const GET = async (req) => {
             orderBy: {
                 views: 'desc',
             },
+            where: {
+                catSlug: { not: "dev" }
+            },
             take: 5,
         });
 

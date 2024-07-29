@@ -87,7 +87,7 @@ const EditBlogForm = ({ title, content, img, catSlug, slug, userEmail }) => {
                     </div>
 
                     <div className='lg:h-[100%] lg:w-[330px] w-[100%] aspect-[4/3] rounded-md overflow-hidden z-1 relative'>
-                        <Image src={newImageUrl} fill quality={1} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
+                        <Image src={newImageUrl} alt={newTitle} height={500} width={500} quality={1} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
                         <CldUploadWidget uploadPreset="ubieie8e" onSuccess={handleUploadSuccess}>
                             {({ open }) => {
                                 return (

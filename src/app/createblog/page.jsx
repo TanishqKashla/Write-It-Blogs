@@ -92,7 +92,7 @@ const createblog = () => {
                         </div>
                     ) : (
                         <div className='sm:h-[100%] sm:w-[330px] w-[100%] aspect-[4/3] rounded-md overflow-hidden z-1 relative'>
-                            <Image src={imageUrl} height={500} width={500} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
+                            <Image src={imageUrl} alt={title} height={500} width={500} style={{ objectFit: "cover", height: "100%", width: "100%" }} />
                             <CldUploadWidget uploadPreset="ubieie8e" onSuccess={handleUploadSuccess}>
                                 {({ open }) => {
                                     return (
@@ -126,7 +126,6 @@ const createblog = () => {
                             <option value="world">World</option>
                             <option value="travel">Travel</option>
                             <option value="space">Space</option>
-                            <option value="dev">dev</option>
                         </select>
                     </div>
                     <button className=' bg-blue-500 p-2 rounded-full  font-bold ml-3 border-2 border-black'>Publish</button>

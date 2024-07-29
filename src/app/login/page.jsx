@@ -22,20 +22,24 @@ const Login = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center h-[90vh]'>
+        <div className='flex flex-col justify-center items-center h-[80vh]'>
+            <h1 className='text-2xl font-bold text-blue-600 mb-16'>Login in to Write It</h1>
             <div className='flex flex-col sm:flex-row gap-5 justify-center items-center'>
+
                 <div className='flex justify-between gap-2 w-fit items-center bg-red-600 p-2 px-3 rounded-lg cursor-pointer'
                     onClick={() => signIn("google")}
                 >
                     <FaGoogle color='white' size={20} />
                     <p className='text-white'>Login using Google</p>
                 </div>
+
                 <div className='flex justify-between gap-2 w-fit items-center bg-slate-900 p-2 px-3 rounded-lg'
                     onClick={() => signIn("github")}
                 >
                     <FaGithub color='white' size={20} />
                     <p className='text-white'>Login using Github</p>
                 </div>
+
             </div>
         </div>
     )

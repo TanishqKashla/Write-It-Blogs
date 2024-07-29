@@ -12,7 +12,7 @@ const Footer = () => {
             <div className='flex  justify-between pt-10 text-sm md:text-xl underline font-bold'>
 
                 <div className='relative w-auto h-[20px] md:h-[40px]'>
-                    <Image src="/logo-white.png" height={500} width={500} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+                    <Image src="/logo-white.png" alt='website logo' height={500} width={500} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
                 </div>
 
                 <div className='flex flex-col items-end md:items-start md:flex-row gap-5 md:gap-20 justify-between'>
@@ -21,7 +21,7 @@ const Footer = () => {
 
                             <h3>About the Developer</h3>
                             <div className='relative w-auto h-[40px] md:h-[60px] overflow-hidden rounded-full aspect-square mt-3'>
-                                <Image src="/developer.jpeg" height={500} width={500} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+                                <Image src="/developer.jpeg" alt='Dev Pfp' height={500} width={500} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
                             </div>
                         </Link>
                     </div>

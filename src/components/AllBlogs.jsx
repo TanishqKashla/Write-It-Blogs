@@ -22,7 +22,13 @@ const getData = async (cat, email) => {
 
 const AllBlogs = async ({ cat, email }) => {
 
-  const data = await getData(cat, email)
+  let data;
+  try {
+    data = await getData(cat, email);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    data = { content: "<p>Failed to load content</p>" };
+  }
 
   return (
 
@@ -47,7 +53,7 @@ const AllBlogs = async ({ cat, email }) => {
                     <p className='inline-block text-xs sm:font-[800] text-blue-500'>{item.createdAt.substring(0, 10)}</p>
                   </div>
                   <div className='leading-[18px] sm:leading-[20px] font-bold text-base sm:text-base' dangerouslySetInnerHTML={{ __html: item?.title.substring(0, 50) }} />
-                 
+
                 </div>
 
                 <div className='text-xs text-gray-700'>
