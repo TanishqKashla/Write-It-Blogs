@@ -3,10 +3,15 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { MdOutlineFileUpload } from "react-icons/md";
 import Image from 'next/image';
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const CldUploadWidget = dynamic(() => import('next-cloudinary').then((mod) => mod.CldUploadWidget), { ssr: false });
+
+// import ReactQuill from 'react-quill';
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from 'next-auth/react';
-import { CldUploadWidget } from 'next-cloudinary';
+// import { CldUploadWidget } from 'next-cloudinary';
 
 const Createblog = () => {
 
