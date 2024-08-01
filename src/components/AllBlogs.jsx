@@ -97,7 +97,6 @@ const AllBlogs = async ({ cat, email }) => {
   let data = [];
   try {
     const result = await getData(cat, email);
-    console.log(result);
     // Ensure result is an array
     if (Array.isArray(result)) {
       data = result;

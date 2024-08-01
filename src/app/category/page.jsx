@@ -2,6 +2,7 @@ import AllBlogs from "@/components/AllBlogs";
 
 const BlogPage = ({ searchParams }) => {
     const { cat } = searchParams;
+    console.log("THIS CAT IS FROM /CATEGORY PAGE :", cat)
 
     return (
         <div className="mt-5">
