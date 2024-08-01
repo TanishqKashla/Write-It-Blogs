@@ -35,10 +35,10 @@ const Nav = () => {
 
           <div className='hidden lg:flex text-gray-900 font-bold gap-5 items-center'>
             <p>Welcome, {data.user.name}</p>
-            <Link href={`/user/${data.user.email}`} className=' text-blue-500'>
+            <Link href={`https://write-it-chi.vercel.app/user/${data.user.email}`} className=' text-blue-500'>
               Your Blogs
             </Link>
-            <Link href={'/createblog'} className='flex justify-center  items-center gap-2 border-2 border-blue-500 px-4 py-3 rounded-full' >
+            <Link href={'https://write-it-chi.vercel.app/createblog'} className='flex justify-center  items-center gap-2 border-2 border-blue-500 px-4 py-3 rounded-full' >
               <LuPen />
               Create new blog
             </Link>
@@ -67,10 +67,10 @@ const Nav = () => {
               <IoMdMenu size={30} />
             </div>
             <div onClick={toggleMenu} className={`absolute bg-white rounded-md border-2 top-12 right-0 z-20 w-[180px] flex flex-col gap-3 p-4 text-blue-500 ${menuVisible ? '' : 'hidden'}`}>
-              <Link href={`/${data.user.email}`} className=' text-blue-500'>
+              <Link href={`https://write-it-chi.vercel.app/user/${data.user.email}`} className=' text-blue-500'>
                 Your Blogs
               </Link>
-              <Link href={'/createblog'} className='border-b-2 border-t-2 py-4' >
+              <Link href={'https://write-it-chi.vercel.app/createblog'} className='border-b-2 border-t-2 py-4' >
                 Create new blog
               </Link>
 
