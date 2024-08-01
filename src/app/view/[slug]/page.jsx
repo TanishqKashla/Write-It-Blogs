@@ -63,7 +63,7 @@ const SinglePage = async ({ params }) => {
                         {data?.user.name}
                     </span>
                     <div className="text-gray-700">
-                        <Link className="text-sm group text-blue-500" href={`/${data.userEmail}`}>
+                        <Link className="text-sm group text-blue-500" href={`user/${data.userEmail}`}>
                             <h2 className="group-hover:text-blue-700" >
                                 {data.userEmail}
                             </h2>
