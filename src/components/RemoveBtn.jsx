@@ -14,7 +14,7 @@ const RemoveBtn = ({ id }) => {
         const confirmed = confirm('Are you sure you want to delete this?')
 
         if (confirmed) {
-            const res = await fetch(`http://localhost:3000/api/posts?id=${id}`, {
+            const res = await fetch(`https://write-it-chi.vercel.app/api/posts?id=${id}`, {
                 method: 'DELETE'
             })
 

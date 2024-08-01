@@ -3,7 +3,7 @@ import React from 'react'
 
 const getBlog = async (slug) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/posts/${slug}`, { cache: 'no-store' })
+        const res = await fetch(`https://write-it-chi.vercel.app/api/posts/${slug}`, { cache: 'no-store' })
 
         if (!res.ok) {
             throw new Error('FAILED TO FETCH BLOG FROM ID')
