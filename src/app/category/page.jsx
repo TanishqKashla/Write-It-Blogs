@@ -2,7 +2,7 @@ import AllBlogs from "@/components/AllBlogs";
 
 const BlogPage = ({ searchParams }) => {
     const { cat } = searchParams;
-    console.log("THIS CAT IS FROM /CATEGORY PAGE :", cat)
+
 
     return (
         <div className="mt-5">
@@ -11,6 +11,7 @@ const BlogPage = ({ searchParams }) => {
                 <h1 className="text-6xl uppercase">{cat} Blog</h1>
             </div>
             <div >
+                <div>Cat to yaha bhi hai na?? {cat}</div>
                 <AllBlogs cat={cat} />
             </div>
         </div>

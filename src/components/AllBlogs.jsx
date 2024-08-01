@@ -82,6 +82,7 @@ import Image from 'next/image';
 import { IoMdEye } from "react-icons/io";
 
 const getData = async (cat, email) => {
+  console.log("CAT IN getData :", cat)
   const res = await fetch(
     `https://write-it-chi.vercel.app/api/posts?cat=${cat || ""}&email=${email || ""}`
   );
@@ -96,6 +97,7 @@ const getData = async (cat, email) => {
 const AllBlogs = async ({ cat, email }) => {
   let data = [];
   try {
+    console.log("CAT INSIDE TRY BLOCK: ",cat)
     const result = await getData(cat, email);
     // Ensure result is an array
     if (Array.isArray(result)) {

@@ -24,7 +24,7 @@ const Category = async () => {
                 <div className='flex flex-wrap gap-2 uppercase m-auto '>
                     {data?.map((item) => (
                         <Link
-                            href={`/category?cat=${item.title}`}
+                            href={`https://write-it-chi.vercel.app/category?cat=${item.title}`}
                             key={item.id}
                             className='bg-blue-300 font-bold p-1 px-3 flex justify-center rounded-md w-20'>
                             {item.title}
