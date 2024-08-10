@@ -97,7 +97,7 @@ const getData = async (cat, email) => {
 const AllBlogs = async ({ cat, email }) => {
   let data = [];
   try {
-    console.log("CAT INSIDE TRY BLOCK: ",cat)
+    console.log("CAT INSIDE TRY BLOCK: ", cat)
     const result = await getData(cat, email);
     // Ensure result is an array
     if (Array.isArray(result)) {
@@ -115,7 +115,7 @@ const AllBlogs = async ({ cat, email }) => {
       <div className='flex flex-wrap gap-7'>
         {data.length > 0 ? (
           data.slice().reverse().map((item) => (
-            <Link key={item.id} href={`/view/${item.slug}`} className='w-[100%] sm:w-auto sm:h-[270px]'>
+            <Link key={item.id} href={`https://write-it-chi.vercel.app/view/${item.slug}`} className='w-[100%] sm:w-auto sm:h-[270px]'>
               <div className='rounded-[5px] h-[110px] w-[100%] sm:w-[240px] sm:h-[100%] overflow-hidden flex gap-2 sm:flex-col z-[5]' key={item.id}>
                 <div className="relative z-[3] sm:h-[58%] w-[40%] sm:w-[100%] overflow-hidden rounded-3">
                   <Image className='rounded-md' src={item.img} alt={item.title} width={450} height={450} style={{ objectFit: 'cover', width: "100%", height: "100%" }} />
