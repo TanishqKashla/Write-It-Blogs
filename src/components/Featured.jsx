@@ -77,7 +77,7 @@ import Image from 'next/image';
 import { FaEraser } from 'react-icons/fa';
 
 const getFeatured = async () => {
-    const res = await fetch(`api/featured`, {
+    const res = await fetch(`/api/featured`, {
         cache: "no-store",
     });
 

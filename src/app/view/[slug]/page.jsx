@@ -9,7 +9,7 @@ import { IoMdEye } from "react-icons/io";
 // import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
-    const res = await fetch(`api/posts/${slug}`, {
+    const res = await fetch(`/api/posts/${slug}`, {
         cache: "no-store",
     });
 
