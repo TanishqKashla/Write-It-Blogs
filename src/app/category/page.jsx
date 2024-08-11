@@ -1,10 +1,25 @@
-'use client'
+'use client';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import AllBlogs from "@/components/AllBlogs";
 
 const BlogPage = () => {
     const router = useRouter();
-    const { cat } = router.query;
+    const [cat, setCat] = useState('');
+
+    useEffect(() => {
+        if (router && router.query) {
+            const { cat: category } = router.query;
+            if (category) {
+                setCat(category);
+            }
+        }
+    }, [router]);
+
+    // You can render a fallback UI or loading state until cat is defined
+    if (!cat) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="mt-5">
