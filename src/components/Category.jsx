@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 const getData = async () => {
-    const res = await fetch("/api/categories", {
+    const res = await fetch("api/categories", {
         cache: "no-store",
     });
 
