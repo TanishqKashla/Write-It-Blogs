@@ -84,7 +84,7 @@ import { IoMdEye } from "react-icons/io";
 const getData = async (cat, email) => {
   console.log("CAT IN getData :", cat)
   const res = await fetch(
-    `https://write-it-chi.vercel.app/api/posts?cat=${cat || ""}&email=${email || ""}`
+    `/api/posts?cat=${cat || ""}&email=${email || ""}`
   );
 
   if (!res.ok) {

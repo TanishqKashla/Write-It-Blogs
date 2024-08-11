@@ -48,7 +48,7 @@ const EditBlogForm = ({ title, content, img, catSlug, slug, userEmail }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const res = await fetch(`https://write-it-chi.vercel.app/api/posts/${slug}`, {
+        const res = await fetch(`/api/posts/${slug}`, {
             method: "PUT",
             body: JSON.stringify({
                 title: newTitle,

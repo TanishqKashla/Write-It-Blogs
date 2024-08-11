@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const getData = async () => {
     const res = await fetch(
-        `https://write-it-chi.vercel.app/api/trendingposts`,
+        `/api/trendingposts`,
         {
             cache: "no-store",
         }

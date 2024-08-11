@@ -35,10 +35,10 @@ const Nav = () => {
 
           <div className='hidden lg:flex text-gray-900 font-bold gap-5 items-center'>
             <p>Welcome, {data.user.name}</p>
-            <Link href={`https://write-it-chi.vercel.app/user/${data.user.email}`} className=' text-blue-500'>
+            <Link href={`/user/${data.user.email}`} className=' text-blue-500'>
               Your Blogs
             </Link>
-            <Link href={'https://write-it-chi.vercel.app/createblog'} className='flex justify-center  items-center gap-2 border-2 border-blue-500 px-4 py-3 rounded-full' >
+            <Link href={'/createblog'} className='flex justify-center  items-center gap-2 border-2 border-blue-500 px-4 py-3 rounded-full' >
               <LuPen />
               Create new blog
             </Link>

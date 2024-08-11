@@ -46,7 +46,7 @@ const Createblog = () => {
         e.preventDefault();
 
 
-        const res = await fetch("https://write-it-chi.vercel.app/api/posts", {
+        const res = await fetch("/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title,
