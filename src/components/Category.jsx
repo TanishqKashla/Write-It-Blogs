@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 const getData = async () => {
-    const res = await fetch("/api/categories", {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
         cache: "no-store",
     });
 
@@ -24,7 +24,7 @@ const Category = async () => {
                 <div className='flex flex-wrap gap-2 uppercase m-auto '>
                     {data?.map((item) => (
                         <Link
-                            href={`https://write-it-chi.vercel.app/category?cat=${item.title}`}
+                            href={`${process.env.NEXTAUTH_URL}/category?cat=${item.title}`}
                             key={item.id}
                             className='bg-blue-300 font-bold p-1 px-3 flex justify-center rounded-md w-20'>
                             {item.title}

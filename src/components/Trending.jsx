@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const getData = async () => {
     const res = await fetch(
-        `/api/trendingposts`,
+        `${process.env.NEXTAUTH_URL}/api/trendingposts`,
         {
             cache: "no-store",
         }
